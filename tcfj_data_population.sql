@@ -23,3 +23,6 @@ CURDATE(),
 'no comment',
 true,
 CURDATE());
+
+insert into tfcj_rds_db.Volunteers (volunteer_name , created_date ) values ("Alec Larsen", curdate())
+insert into tfcj_rds_db.Volunteers (volunteer_name , created_date ) values ("Andrew Larsen", curdate())
