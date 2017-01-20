@@ -1,0 +1,45 @@
+function myFunction() {
+  var form = FormApp.getActiveForm()
+   // Update form properties via chaining.
+  form.setTitle('Form Nameasdfasdf')
+     .setDescription(getData() + getLength())
+     .setConfirmationMessage('Thanks for responding!')
+     .setAllowResponseEdits(true)
+     .setAcceptingResponses(false);
+
+}
+
+function getData() {
+
+  var url = "http://shiftservice-development.qjasxcqfqt.us-west-2.elasticbeanstalk.com/tcfj/v1/shifts";
+  var options = {
+    method: "get",
+    mode: 'cors'
+  }
+  try{
+  var response = UrlFetchApp.fetch(url, options);
+  }
+  catch(e){
+    Logger.log(e)
+  }
+  var json = JSON.parse(response);
+  Logger.log(json);
+  return json[0].recipientName;
+}
+function getLength() {
+
+  var url = "http://shiftservice-development.qjasxcqfqt.us-west-2.elasticbeanstalk.com/tcfj/v1/shifts";
+  var options = {
+    method: "get",
+    mode: 'cors'
+  }
+  try{
+  var response = UrlFetchApp.fetch(url, options);
+  }
+  catch(e){
+    Logger.log(e)
+  }
+  var json = JSON.parse(response);
+  Logger.log(json.length);
+  return json.length
+}
