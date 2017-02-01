@@ -10,7 +10,7 @@ CREATE TABLE Shifts( shift_id INT NOT NULL AUTO_INCREMENT, organization_id INT N
 
 );
 
-CREATE TABLE Volunteers ( volunteer_id INT NOT NULL AUTO_INCREMENT, volunteer_name VARCHAR(100) NOT NULL, created_date DATE, PRIMARY KEY (volunteer_id), UNIQUE (volunteer_name)
+CREATE TABLE Volunteers ( volunteer_id INT NOT NULL AUTO_INCREMENT, volunteer_name VARCHAR(100) NOT NULL, created_date DATETIME DEFAULT current_timestamp, PRIMARY KEY (volunteer_id), UNIQUE (volunteer_name)
 
 );
 
